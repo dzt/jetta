@@ -1,0 +1,22 @@
+{
+  "name": "jetta",
+  "version": "1.0.0",
+  "description": "Multi-platform Souldcloud Downloader built with Electron.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/dzt/jetta.git"
+  },
+  "keywords": [
+    "soundcloud"
+  ],
+  "author": "Peter Soboyejo <thepcmrtim@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dzt/jetta/issues"
+  },
+  "homepage": "https://github.com/dzt/jetta#readme"
+}
