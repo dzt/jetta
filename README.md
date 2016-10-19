@@ -1,5 +1,7 @@
 Jetta is an open source multi-platform Soundcloud song/playlist downloader for macOS, Windows, and Linux. Jetta features a easy to use interface, unique keyboard shortcuts, and a powerful customization option to use. **Jetta is currently under active development.**
 
+![sc](http://i.imgur.com/h5yPF.png)
+
 ## Download Jetta
 You can download compiled versions of Jetta for Windows, macOS, and Linux from https://github.com/dzt/jetta/releases. This app is currently in its development stage, so it hasn't been fully tested on all platforms. Confirmed to be working on macOS and Windows.
 

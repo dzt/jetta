@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Jetta</title>
+	<link href="css/style.css" rel="stylesheet" type="text/css" />
+	<link href="././node_modules/font-awesome/css/font-awesome.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+	<div class="topbar">
+		<div class="windows">
+			<a class="close fa fa-times"></a>
+			<a class="minimize"></a>
+		</div>
+
+		<div class="mac">
+			<a class="ico_circle close"></a>
+			<a class="ico_circle minimize"></a>
+			<a class="ico_circle max"></a>
+		</div>
+		<div class="title"></div>
+	</div>
+
+	<div class="main">
+		<header>
+			<a id="settings" class="logout fa fa-gear"></a>
+			<h1 style="top: 5px;"><span>Jetta</span>
+			</h1>
+		</header>
+		<div class="third-2">
+			<div class="results content" style="height: 485px; width: 450px;" data-settings="save">
+
+				<p style="padding-left: 5px;">Save Path</p>
+				<div class="file">
+					<input type="file" name="dir" id="dirinput">
+					<div class="filename" id="filename"></div>
+					<label id="select-directory"><span>Choose file</span></label>
+				</div>
+
+				<p style="padding-left: 5px;">Bandcamp Album Link&nbsp;&nbsp;<a class="label" style="background-color: #f89406; color: white; text-decoration: none;" id="paste">Paste&nbsp;<i class="fa fa-clipboard" aria-hidden="true"></i></a></p>
+				<input type="text" id="link">
+
+				<br><br><br>
+				<input type="submit" class="go" value="Download" id="downloadBtn"></input>
+				<input type="submit" class="go" value="Open Destination Folder" id="openBtn"></input>
+
+				<br><br><br><br>
+				<p style="padding-left: 5px;">Status</p>
+				<div class="results content scroll scroll4" style="height: 130px; width: 424px; overflow: scroll; overflow-x: hidden;">
+
+					<div id="logs">
+						<ol id="tracks">
+						</ol>
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+
+		<footer>
+			<div class="update" id="downloaded">
+			</div>
+			<div class="update" id="footerstatus">
+			</div>
+			<div class="status">
+				<a id="gh" class="fa fa-github-alt fa"></a>&nbsp;&nbsp;GitHub / Written by Peter Soboyejo
+			</div>
+		</footer>
+
+	</div>
+
+	<script src="js/settings.js"></script>
+	<script src="js/app.js"></script>
+
+</body>
+
+</html>

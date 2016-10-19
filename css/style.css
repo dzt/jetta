@@ -1,0 +1,1116 @@
+@import url('http://fonts.googleapis.com/css?family=Open+Sans:400,300,700|Noto+Sans:400,700');
+html, body {
+    height: 100%;
+    overflow: hidden;
+    margin: 18px 0px 0px 0px;
+    -webkit-user-select: none;
+}
+body, input, textarea, select {
+    font-family: Open Sans, Helvetica Neue, Arial, sans-serif;
+}
+h1 {
+    font-family: Noto Sans, Open Sans, Helvetica Neue, Arial, sans-serif;
+}
+h1, h2, h3, h4, h5, p, div {
+    cursor: default;
+}
+
+/*input[type="submit"], .btn {
+    background-color: #dd4343;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #fff;
+    padding: 12px 24px;
+    transition: background.5s ease;
+}*/
+
+.label {
+    display: inline;
+    padding: .2em .6em .3em;
+    font-size: 75%;
+    font-weight: 700;
+    line-height: 1;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .25em;
+}
+
+ol {
+  /* Counter auf 0 setzen und Namen vergeben */
+  counter-reset: list;
+
+  list-style: none;
+}
+
+li {
+  /* Counter mit jedem li erhöhen */
+  counter-increment: list;
+
+  margin-bottom: 10px;
+}
+
+li::before {
+  /* Aktuellen Wert mit . (Punkt) danach ausgeben und
+     Art des Aufzählungszeichens definieren */
+  content: counter(list, decimal-leading-zero);
+
+  background: #3cade2;
+
+  font-family: Arial, sans-serif;
+  color: #fff;
+  font-size: 13px;
+  text-align: center;
+
+  border-radius: 50%;
+  width: 2.2em;
+  height: 2.2em;
+  line-height: 2.3em;
+  display: inline-block;
+  margin-right: 1em;
+}
+
+input[type="text"] {
+  display: inline-block;
+  width: 100%;
+  box-sizing: border-box;
+  outline:none;
+  white-space: nowrap;
+  font-size: 13px;
+  text-overflow: ellipsis;
+  padding: 9px;
+  float: left;
+  overflow: hidden;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #ddd;
+    color: #333;
+    padding: 9px 12px;
+}
+.btn-primary {
+    background-color: #f04646;
+    color: #fff;
+}
+.btn:hover {
+    background-color: #eee;
+}
+
+.btn .fa {
+    margin-right: 6px;
+}
+input[type="checkbox"], input[type="file"] {
+    display: none;
+}
+input[type="checkbox"]+label {
+    display: inline-block;
+    background-color: #f6f6f6;
+    border: solid 1px rgba(0, 0, 0, 0.1);
+    font-size: 14px;
+    color: #bbb;
+    padding: 4px !important;
+    margin: 0px 9px 6px 0px;
+    opacity: 0.8;
+    float: none !important;
+    transition: .3s ease;
+}
+input[type="checkbox"]+label:hover {
+    opacity: 1;
+}
+input[type="checkbox"]:checked+label {
+    background-color: #f04646;
+    color: #fff;
+}
+select {
+    position: relative;
+    flex: 1;
+    margin-left: 5px;
+    padding: 8px 0px 6px;
+    border: 1px solid #d3d3d3;
+    border-radius: 3px;
+    color: #444;
+    text-align: left;
+    vertical-align: middle;
+}
+pre {
+    -webkit-user-select: text;
+    white-space: pre-line;
+}
+.hidden {
+    display: none;
+}
+body>div {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+}
+body.error {
+    top: 0px;
+    background-color: #fff;
+    border-top: solid 6px #341661;
+    padding: 42px;
+    margin-top: 0px;
+    color: #341661;
+}
+body.error h1 {
+    font-size: 42px;
+    font-weight: 300;
+}
+body.error .fa {
+    font-size: 256px;
+    float: right;
+    margin: 0px 0px 0px 64px;
+}
+.topbar, .error {
+    position: fixed;
+    right: 0px;
+    left: 0px;
+    height: auto;
+    color: #fff;
+    z-index: 999;
+}
+.topbar {
+    height: 37px;
+    top: 0px;
+    background-color: #37a1d2;
+    border-bottom: none;
+    font-size: 12px;
+    text-align: left;
+    padding-left: 10px;
+    -webkit-app-region: drag;
+}
+.topbar .title {
+    padding: 9px;
+}
+.topbar .windows .close, .topbar .windows .minimize {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    padding: 12px 12px 9px 12px;
+    -webkit-app-region: no-drag;
+    float: right;
+}
+.topbar .windows .minimize {
+    padding: 6px 12px 15px 12px;
+}
+.topbar .windows .minimize:before {
+    content: '';
+    display: inline-block;
+    width: 12px;
+    height: 2px;
+    border-bottom: solid 2px #fff;
+}
+.topbar .windows .close:hover, .topbar .windows .minimize:hover {
+    background-color: #be2828;
+}
+.topbar.lostFocus .mac .ico_circle {
+    background-color: #dfdfdf !important;
+    border-color: #d1d1d1;
+}
+.topbar .mac .ico_circle {
+    width: 12px;
+    height: 12px;
+    display: inline-block;
+    float: left;
+    background: red;
+    margin-right: 8px;
+    border-radius: 12px;
+    position: relative;
+    margin-top: 11px;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+.topbar .mac:hover .close {
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAGCAMAAADXEh96AAAAElBMVEX///+GAwiPCQ+cFBedFBeeFBdjGTfWAAAAAXRSTlMAQObYZgAAACNJREFUCNc1yLcNADAQxDBd2n9lN++KAPFgpkpUiBQ+ly7MDwZhAEz5LUm1AAAAAElFTkSuQmCC);
+}
+.topbar .mac .close:active {
+    background-color: #C86457;
+}
+.topbar .mac .minimize:active {
+    background-color: #D19B3F;
+}
+.topbar .mac .max:active {
+    background-color: #28883E;
+}
+.topbar .mac:hover .minimize {
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAACCAMAAABSSm3fAAAACVBMVEWeVxWeWRa3cyEERjnuAAAAEUlEQVR4AWNgYmQAAkYmOAMAAH4ADWy/N2MAAAAASUVORK5CYII=);
+}
+.topbar .mac:hover .max {
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAGCAMAAADXEh96AAAAFVBMVEX///8AZREAZhEAbRUBZBABbBUBgB/W3+WuAAAAAXRSTlMAQObYZgAAACNJREFUeAEVxcERACAMAyCaqPuP7JUP6OTBPdF9zEXl7F6mfAVqAEH8644UAAAAAElFTkSuQmCC);
+}
+.topbar .mac .close {
+    border: 1px solid #da3735;
+    background-color: #ff5a56;
+}
+.topbar .mac .minimize {
+    border: 1px solid #db962e;
+    background-color: #ffc045;
+}
+.topbar .mac .max {
+    border: 1px solid #1c933a;
+    background-color: #00cc4b;
+}
+.topbar .mac .ico_circle:first-child {
+    margin-left: 12px;
+}
+.error {
+    top: 36px;
+    background-color: #472f5a;
+    border-width: 0px 1px;
+    font-size: 12px;
+    color: #fff;
+    padding: 12px;
+}
+.bgcurve {
+    position: absolute;
+    width: 100%;
+    height: 200%;
+    background-color: rgba(255, 255, 255, 0.04);
+    /*#401580;*/
+    border-radius: 100%;
+    transform: rotate(60deg);
+    margin-top: -30px;
+    z-index: 0 !important;
+}
+.gettingStarted {
+    background-color: #f04646;
+    /*#341661*/
+}
+.gettingStarted .inner {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    padding: 128px 0px;
+    overflow: hidden;
+}
+.gettingStarted h1 {
+    font-size: 48px;
+    font-weight: 300;
+}
+.gettingStarted h1 span {
+    font-weight: bold;
+}
+.gettingStarted input[type="text"], .gettingStarted input[type="password"] {
+    width: 260px;
+    margin-bottom: 9px;
+}
+.gettingStarted input[name="tfa"] {
+    display: none;
+}
+.main {
+    display: none;
+    background-color: #f6f6f6;
+}
+.main header {
+    background-color: #3cade2;
+    color: #fff;
+    padding: 0px 24px;
+    overflow: hidden;
+}
+.main header h1 {
+    font-weight: 300;
+}
+.main header h1 span {
+    font-weight: bold;
+}
+.main header .fa {
+    float: right;
+    opacity: 0.8;
+    cursor: pointer;
+    margin: 32px 0px;
+}
+.main header .fa:hover {
+    opacity: 1;
+}
+.main footer {
+    position: fixed;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    background-color: #fff;
+    color: #666;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #fff #fff #fff #fff;
+    font-size: 12px;
+    padding: 9px 24px;
+    overflow: hidden;
+    z-index: 999;
+}
+.main footer .status div {
+    display: none;
+}
+.main footer .status div:before {
+    content: '';
+    display: inline-block;
+    width: 9px;
+    height: 9px;
+    background-color: #ccc;
+    border-radius: 100px;
+    margin-right: 6px;
+}
+.main footer .status .connected:before {
+    background-color: #66bc66;
+}
+.main footer .status .connecting:before, .main footer .status .updating:before {
+    background-color: #f04646;
+    -webkit-animation: 3s indicator infinite;
+}
+.main footer .status .disconnected:before {
+    background-color: #de7b7b;
+}
+.main footer .update {
+    float: right;
+}
+.main footer .update a {
+    display: inline;
+    padding: 3px 9px;
+}
+.main>div {
+    padding: 12px;
+}
+.main .content {
+    background-color: #fff;
+    border: solid 1px #eee;
+    border-radius: 10px;
+    box-shadow: 0px 0px 6px #eee;
+    font-size: 14px;
+    padding: 12px;
+    margin: 4px 0px 24px 0px;
+}
+.main .content h3 {
+    font-size: 12px;
+    font-weight: bold;
+    color: #999;
+    margin: 0px 0px 9px;
+}
+.main .content .user {
+    transition: .5s ease;
+    overflow: hidden;
+}
+.main .content .user:hover {
+    background-color: #eee;
+}
+.main .content .user img {
+    width: 48px;
+    border-radius: 100px;
+    margin-right: 12px;
+    float: left;
+}
+.main .content .user>div {
+    margin-left: 60px;
+}
+.main .content .user .name {
+    font-weight: bold;
+    white-space: nowrap;
+    margin-top: 4px;
+}
+.main .content .user .amount {
+    color: #666;
+}
+.main .content .total {
+    font-size: 32px;
+    font-weight: 300;
+    color: #f04646;
+}
+.main .content .since {
+    color: #666;
+}
+.main .content .options {
+    color: #666;
+    cursor: pointer;
+    float: right;
+    padding: 2px 0px;
+    opacity: 0.6;
+    transition: .5s ease;
+}
+.main .content .options:hover {
+    opacity: 1;
+    transform: rotate(45deg);
+}
+.music>.connecting, .music>.connected, .music>.fail {
+    display: none;
+    margin-bottom: 12px;
+}
+.music .toggle {
+    display: inline-block;
+    width: 19px;
+    height: 19px;
+    background-color: #eee;
+    text-align: center;
+    color: #fff;
+    padding: 0px 1px 1px 1px;
+    transition: .5s ease;
+}
+.music .toggle.enabled {
+    background-color: #59B36E;
+}
+.music .toggle.disabled {
+    background-color: #D66B6B;
+}
+.connecting:before {
+    content: '';
+    display: inline-block;
+    width: 9px;
+    height: 9px;
+    background-color: #f04646;
+    border-radius: 100px;
+    margin-right: 6px;
+    -webkit-animation: 3s indicator infinite;
+}
+.music .requests {
+    padding: 9px 0px;
+}
+.music .right {
+    color: #666;
+    text-align: right;
+    float: right;
+    opacity: 0.8;
+    transition: .5s ease;
+}
+.music .right:hover {
+    opacity: 1;
+}
+.music .right .label {
+    background-color: #eee;
+    border: solid 1px #ccc;
+    font-size: 10px;
+    padding: 2px 6px;
+    float: left;
+}
+.music .waiting {
+    font-size: 12px;
+    color: #ccc;
+}
+.track {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+    background-color: #eee;
+    font-size: 12px;
+    overflow: hidden;
+}
+.track>div {
+    display: table-cell;
+    width: 100%;
+    vertical-align: top;
+}
+.track .icon {
+    width: 20px;
+    background-color: #ccc;
+    color: #666;
+    padding: 16px;
+    vertical-align: middle;
+}
+.track .info {
+    padding: 9px;
+}
+.track .info .meta {
+    font-size: 12px;
+    color: #666;
+}
+.track .approval {
+    width: 16px;
+    padding: 9px;
+    float: right;
+}
+.track .approval a {
+    display: block;
+    text-align: center;
+    padding: 0px 2px 1px 2px;
+}
+.track .approval a.accept {
+    color: #4ABD4D;
+}
+.track .approval a.deny {
+    color: #BD4A4A;
+}
+.track .approval a:hover {
+    background-color: #ddd;
+}
+.third, .third-2, .half {
+    box-sizing: border-box;
+    padding: 12px;
+    float: left;
+}
+.third {
+    width: 33.3%;
+}
+.third-2 {
+    width: 66.6%;
+}
+.half {
+    width: 50%;
+}
+.modal {
+    display: none;
+    background-color: rgba(0, 0, 0, 0.8);
+    font-size: 14px;
+    z-index: 1;
+}
+.modal>div {
+    min-height: 520px;
+    background-color: #fff;
+    max-width: 90%;
+    box-shadow: 0px 0px 9px #000;
+    box-sizing: border-box;
+    overflow: hidden;
+    padding: 24px;
+    margin: 48px auto;
+}
+.modal>div[data-modal="files"] {
+    min-height: 0px;
+}
+.modal>div[data-modal="spotify"] {
+    max-width: 460px;
+    min-height: initial;
+}
+.modal h2 {
+    border-bottom: solid 1px #dd4343;
+    color: #dd4343;
+    padding-bottom: 6px;
+    margin: 0px 0px 12px 0px;
+}
+.modal h2 .close {
+    float: right;
+    margin-top: -6px;
+}
+.modal form div {
+    overflow: hidden;
+}
+.modal form input {
+    font-size: 13px;
+    padding: 9px;
+}
+.modal form div input, .modal form div input+label.right {
+    float: right;
+}
+.modal form div input[type="radio"], .modal form div input[type="radio"]+label {
+    float: none;
+}
+.modal form div select {
+    margin-bottom: 9px;
+}
+.modal form div label.short {
+    padding-right: 24px;
+}
+.modal form div label.field {
+    width: 92px;
+}
+.modal form .third label {
+    display: block;
+    padding: 0px 0px 6px 0px;
+}
+.modal form .third input {
+    float: none;
+    margin-bottom: 12px;
+}
+.modal form .third select {
+    min-width: 155px;
+    margin-bottom: 0px;
+}
+.modal form label {
+    display: inline-block;
+    padding: 9px 0px 6px 0px;
+}
+.modal .third, .modal .third-2, .modal .third {
+    padding: 0px;
+}
+input[type="file"]+label {
+    font-size: 12px;
+    padding: 9px 16px;
+}
+.file {
+    display: inline-block;
+    width: 300px;
+    overflow: hidden;
+    border: solid 1px #eee;
+}
+.file input {
+    display: none;
+}
+.file label {
+    display: inline-block;
+    width: 40%;
+    background-color: #3cade2;
+    box-sizing: border-box;
+    font-size: 13px;
+    text-align: center;
+    color: #fff;
+    padding: 9px !important;
+    opacity: 0.8;
+    transition: .3s ease;
+    float: left;
+}
+.file label:hover {
+    opacity: 1;
+}
+.file .filename {
+    display: inline-block;
+    width: 60%;
+    box-sizing: border-box;
+    white-space: nowrap;
+    font-size: 13px;
+    text-overflow: ellipsis;
+    padding: 9px;
+    float: left;
+    overflow: hidden;
+}
+
+.go {
+  display: inline-block;
+  width: 100%;
+  border: solid 1px #eee;
+  outline: 0;
+  background-color: #3cade2;
+  box-sizing: border-box;
+  font-size: 13px;
+  text-align: center;
+  color: #fff;
+  padding: 9px !important;
+  float: left;
+}
+
+.updatecover {
+    position: fixed;
+    top: 36px;
+    bottom: 0px;
+    display: none;
+    width: 100%;
+    height: auto;
+    background-color: #fff;
+    box-sizing: border-box;
+    font-weight: 300;
+    font-size: 24px;
+    text-align: center;
+    padding: 256px 0px;
+    z-index: 9999;
+}
+.modal .files .file {
+    float: right;
+}
+.modal .files .list {
+    height: 320px;
+    overflow-y: auto;
+    margin-top: 24px;
+}
+.modal .files .list::-webkit-scrollbar {
+    width: 12px;
+}
+.modal .files .list::-webkit-scrollbar-thumb {
+    background-color: #bbb;
+}
+.modal .files .list::-webkit-scrollbar-track {
+    background-color: #ddd;
+}
+.modal .files .list a {
+    display: block;
+    background-color: #eee;
+    padding: 9px;
+    transition: background .5s ease;
+}
+.modal .files .list a:nth-child(even) {
+    background-color: #f9f9f9;
+}
+.modal .files .list a:hover, .modal .files .list a.active {
+    background-color: #ddd;
+}
+.modal .files .list a.rename {
+    padding: 2px;
+}
+.modal .files .list input {
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 12px;
+    padding: 6px;
+    margin: 0px;
+}
+.modal .files .edit {
+    padding: 24px 0px 0px 12px;
+}
+.modal .files .format {
+    height: 108px;
+    border: solid 1px #aaa;
+    box-sizing: border-box;
+    cursor: text;
+    padding: 12px;
+    overflow-y: auto;
+}
+.modal .files .tag {
+    display: inline-block;
+    background-color: #977bac;
+    border: solid 1px #9069ad;
+    border-radius: 4px;
+    font-size: 10px;
+    font-weight: bold;
+    color: #fff;
+    padding: 4px 6px 5px 6px;
+    margin: 0px 2px;
+}
+.modal .files .tag.selected {
+    background-color: #9069ad;
+}
+.modal .files .edit a {
+    text-decoration: none;
+    color: #666;
+}
+.modal .files .edit a:hover {
+    text-decoration: underline;
+}
+.modal .files .edit .options {
+    border-top: solid 1px #ccc;
+    padding-top: 16px;
+    margin-bottom: 0px;
+}
+.modal .files .edit .btn {
+    font-size: 12px;
+}
+.modal .files .edit .btn-primary {
+    color: #fff;
+}
+.modal .files .edit .btn:hover {
+    text-decoration: none;
+}
+.modal .files .edit .indicator {
+    display: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 100px;
+    background-color: #503a60;
+    float: right;
+    margin: 9px 0px;
+    -webkit-animation: 2s indicator infinite;
+}
+.modal .notifications .position {
+    display: inline-block;
+    width: 48px;
+    height: 24px;
+    position: relative;
+    top: 16px;
+    border: solid 1px #ccc;
+    border-radius: 4px;
+    padding: 9px;
+    margin: -16px 16px 0px 0px;
+}
+.modal .notifications .position>div {
+    width: 24px;
+    height: 12px;
+    border-radius: 4px;
+    background-color: #977bac;
+}
+.modal .notifications .position .bottom {
+    margin-top: 12px;
+}
+.modal .notifications .positioning .field {
+    padding-bottom: 32px;
+}
+.modal .notifications .position .right {
+    float: right;
+}
+.modal .notifications .sound label {
+    float: left;
+}
+.modal .youtube {
+    text-align: center;
+    margin-top: 32px;
+}
+.modal .youtube iframe {
+    width: 100%;
+    height: 428px;
+}
+.chip {
+    padding: .2em .6em .3em;
+    font-size: 75%;
+    font-weight: 700;
+    line-height: 1;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .25em;
+}
+.scroll {
+    height: 200px;
+    overflow: auto;
+    float: left;
+    margin: 0 10px;
+    padding: 10px 10px 10px 10px;
+}
+.scroll4::-webkit-scrollbar {
+    width: 10px;
+}
+.scroll4::-webkit-scrollbar-thumb {
+    background: #666;
+    border-radius: 20px;
+}
+.scroll4::-webkit-scrollbar-track {
+    background: #ddd;
+    border-radius: 20px;
+}
+ul.tabs {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+}
+ul.tabs li {
+    background: none;
+    color: #222;
+    display: inline-block;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+ul.tabs li.current {
+    background: #dd4343;
+    color: #fff;
+}
+.tab-content {
+    display: none;
+    padding: 15px;
+}
+.tab-content.current {
+    display: inherit;
+}
+@-webkit-keyframes indicator {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+form input[type=text] {
+    border: none;
+    padding: 10px 0;
+    border-bottom: 1px solid #cecece;
+    width: 100%;
+}
+
+.form-group {
+    position: relative;
+    padding-top: 13px;
+}
+.form-group input[type="checkbox"] {
+    margin-top: 10px;
+}
+.form-group input.form-control~label, .form-group input[type="checkbox"]~label, .form-group input[type="checkbox"]+input[type="hidden"]~label {
+    color: grey;
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 12px;
+    -webkit-transition: color 0.15s ease;
+    transition: color 0.15s ease;
+}
+.form-group input.form-control:focus~label, .form-group input[type="checkbox"]:focus~label, .form-group input[type="checkbox"]+input[type="hidden"]:focus~label {
+    color: blue;
+}
+.form-group input.form-control.input-validation-error, .form-group input[type="checkbox"].input-validation-error, .form-group input[type="checkbox"]+input[type="hidden"].input-validation-error {
+    box-shadow: inset 0 -2px 0 red;
+}
+.form-group input.form-control.input-validation-error~label, .form-group input[type="checkbox"].input-validation-error~label, .form-group input[type="checkbox"]+input[type="hidden"].input-validation-error~label {
+    color: red;
+}
+.form-group input.form-control.input-validation-error~label~.field-validation-error, .form-group input[type="checkbox"].input-validation-error~label~.field-validation-error, .form-group input[type="checkbox"]+input[type="hidden"].input-validation-error~label~.field-validation-error {
+    display: block;
+}
+.form-group input.books-datepicker+.bootstrap-datetimepicker-widget~label, .form-group input.books-kodatepicker+.bootstrap-datetimepicker-widget~label {
+    color: grey;
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 12px;
+    -webkit-transition: color 0.15s ease;
+    transition: color 0.15s ease;
+}
+.form-group input.books-datepicker:focus+.bootstrap-datetimepicker-widget~label, .form-group input.books-kodatepicker:focus+.bootstrap-datetimepicker-widget~label {
+    color: blue;
+}
+.form-group input.books-datepicker.input-validation-error, .form-group input.books-kodatepicker.input-validation-error {
+    box-shadow: inset 0 -2px 0 red;
+}
+.form-group input.books-datepicker.input-validation-error+.bootstrap-datetimepicker-widget~label, .form-group input.books-kodatepicker.input-validation-error+.bootstrap-datetimepicker-widget~label {
+    color: red;
+}
+.form-group input.books-datepicker.input-validation-error+.bootstrap-datetimepicker-widget~label+.field-validation-error, .form-group input.books-kodatepicker.input-validation-error+.bootstrap-datetimepicker-widget~label+.field-validation-error {
+    display: block;
+}
+.form-group select.chosen-default+.chosen-container {
+    display: block;
+}
+.form-group select.chosen-default+.chosen-container~label {
+    color: grey;
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 12px;
+    -webkit-transition: color 0.15s ease;
+    transition: color 0.15s ease;
+}
+.form-group select.chosen-default+.chosen-container.chosen-container-active .chosen-single {
+    border-bottom: 2px solid blue;
+}
+.form-group select.chosen-default+.chosen-container.chosen-container-active~label {
+    color: blue;
+}
+.form-group select.chosen-default.input-validation-error+.chosen-container .chosen-single, .form-group select.chosen-default.input-validation-error+.chosen-container-active .chosen-single {
+    border-bottom: 2px solid red;
+}
+.form-group select.chosen-default.input-validation-error+.chosen-container~label, .form-group select.chosen-default.input-validation-error+.chosen-container-active~label {
+    color: red;
+}
+.form-group select.chosen-default.input-validation-error+.chosen-container~label+.field-validation-error, .form-group select.chosen-default.input-validation-error+.chosen-container-active~label+.field-validation-error {
+    display: block;
+}
+.form-group select {
+    padding-top: 2px;
+    -webkit-transition: border 0.15s ease;
+    transition: border 0.15s ease;
+}
+.form-group select~label {
+    color: grey;
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 12px;
+    -webkit-transition: color 0.15s ease;
+    transition: color 0.15s ease;
+}
+.form-group select:focus {
+    border-bottom: none;
+    outline: none;
+}
+.form-group select:focus+label {
+    color: blue;
+}
+.form-group select.input-validation-error, .form-group select.input-validation-error:focus {
+    border-bottom: none;
+    box-shadow: inset 0 -2px 0 red;
+}
+.form-group select.input-validation-error~label, .form-group select.input-validation-error:focus~label {
+    color: red;
+}
+.form-group span[class*='field-validation'] {
+    display: none;
+    font-size: 12px;
+    padding: 2px 0;
+    color: grey;
+    -webkit-transition: all 0.15 ease;
+    transition: all 0.15 ease;
+}
+.form-group span[class*='field-validation'].field-validation-error {
+    color: red;
+}
+.form-group+p {
+    margin-top: 30px;
+}
+.input-group:not(.default) {
+    display: block;
+    padding-top: 13px;
+    margin-top: -13px;
+    max-width: 250px;
+}
+.input-group:not(.default) .form-control {
+    padding-left: 30px;
+    display: block;
+    float: none;
+    text-align: right;
+    padding-right: 8px;
+}
+.input-group:not(.default) .form-control:after {
+    content: ' ';
+    display: table;
+    clear: both;
+}
+.input-group:not(.default) .input-group-addon {
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    left: 0;
+    top: 16px;
+    z-index: 3;
+    padding-left: 0;
+    width: 30px;
+    text-align: left;
+}
+.input-group:not(.default) .input-group-addon.clickable {
+    cursor: pointer;
+}
+.input-group:not(.default) .input-group-addon.right {
+    padding-left: 12px;
+    padding-right: 0;
+    left: auto;
+    right: 8px;
+    text-align: right;
+}
+.input-group:not(.default) .input-group-addon.right+.form-control {
+    padding-left: 0;
+    padding-right: 30px;
+    text-align: left;
+}
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 22px;
+    margin-left: 10pt;
+}
+
+/* Hide default HTML checkbox */
+
+.switch input {
+    display: none;
+}
+
+/* The slider */
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 4px;
+    top: 2px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+input:checked+.slider {
+    background-color: #00E676;
+}
+input:focus+.slider {
+    box-shadow: 0 0 1px #00E676;
+}
+input:checked+.slider:before {
+    -webkit-transform: translateX(17px);
+    -ms-transform: translateX(17px);
+    transform: translateX(17px);
+}
+
+/* Rounded sliders */
+
+.slider.round {
+    border-radius: 34px;
+}
+.slider.round:before {
+    border-radius: 50%;
+}
