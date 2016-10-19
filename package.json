@@ -47,16 +47,16 @@
     "electron-winstaller": "^2.3.4"
   },
   "build": {
-    "productName": "sScout",
+    "productName": "Jetta",
     "asar": false,
     "mac": {
       "target": "default",
       "icon": "assets/logo.icns"
     },
     "win": {
-      "title": "sScout",
+      "title": "Jetta",
       "icon": "assets/logo.ico",
-      "version": "0.0.2",
+      "version": "1.0.0",
       "target": "squirrel",
       "authors": "Peter Soboyejo"
     }
