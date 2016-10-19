@@ -15,6 +15,9 @@ To run the development environment run
 npm install && npm run dev
 ```
 
+## Important Notice
+Buy the tracks/albums you like, I do not support nor do I condone using Jetta to download priced albums. This project is designed for educational purposes.
+
 ## License
 
 ```
