@@ -121,5 +121,10 @@ ipcRenderer.on('folder', function(event, data) {
     modifiedDir = dir + '\\' + data.artist + '\\' + data.album
     console.log(modifiedDir)
     dir = modifiedDir
+  } else if(os.platform() == 'darwin') {
+    console.log(data)
+    modifiedDir = dir + '/' + data.artist + '/' + data.album
+    console.log(modifiedDir)
+    dir = modifiedDir
   }
 });

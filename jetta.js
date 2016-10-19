@@ -72,9 +72,18 @@ jetta.download = function(link, dir, event) {
             } else {
                 console.log(artist + ' directory already exists.')
             }
-
             if (!fs.existsSync(dir + '\\' + artist + "\\" + album)) {
                 fs.mkdirSync(dir + '\\' + artist + "\\" + album);
+            }
+        } else if (os.platform() == 'darwin') {
+            console.log(dir + '/' + artist)
+            if (!fs.existsSync(dir + '/' + artist)) {
+                fs.mkdirSync(dir + '/' + artist);
+            } else {
+                console.log(artist + ' directory already exists.')
+            }
+            if (!fs.existsSync(dir + '/' + artist + "/" + album)) {
+                fs.mkdirSync(dir + '/' + artist + "/" + album);
             }
         }
 
@@ -116,6 +125,8 @@ jetta.download = function(link, dir, event) {
 
                 if (os.platform() == 'win32') {
                     folder = dir + '\\' + track_info.artist + "\\" + track_info.album + '\\';
+                } else if (os.platform() == 'darwin') {
+                    folder = dir + '/' + track_info.artist + "/" + track_info.album + '/';
                 }
                 var file_name = (track_info.artist + " - " + track_info.track + ".mp3").replace(/\//g, "");
                 response.pipe(fs.createWriteStream(folder + file_name));
@@ -136,6 +147,8 @@ jetta.download = function(link, dir, event) {
         //displays the progress by comparing the content-length with filesize on disk
         if (os.platform() == 'win32') {
             var folder = dir + '\\' + track_info.artist + "\\" + track_info.album + '\\';
+        } else if (os.platform() == 'darwin') {
+            var folder = dir + '/' + track_info.artist + "/" + track_info.album + '/';
         }
         var file_name = (track_info.artist + " - " + track_info.track + ".mp3").replace(/\//g, "");
         console.log(folder + file_name)
