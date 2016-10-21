@@ -105,8 +105,8 @@ function display_progress(data) {
         } else {
             $('<li id="track_' + data.id + '">' + '<span>' + data.progress + '</span>' + '</li>').appendTo("#tracks");
         }
-    } else {
         $('h1').html(data.progress);
+    } else {
     }
 }
 

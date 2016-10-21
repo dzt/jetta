@@ -16,13 +16,14 @@ jetta.download = function(link, dir, event) {
     var sender = mainWindow.webContents;
     var bandcamp_url = url_functions.parse(link);
 
+    bandcamp_url.protocol = 'http:'
+    console.log(bandcamp_url.protocol);
     init(bandcamp_url)
 
     var options = {
         host: bandcamp_url.host,
         path: bandcamp_url.path
     };
-
     function init(options) {
         var request = http.request(options, function(res) {
             var data = '';
@@ -88,8 +89,8 @@ jetta.download = function(link, dir, event) {
         }
 
         var albumInfo = {
-          artist: artist,
-          album: album
+            artist: artist,
+            album: album
         }
 
         sender.send('folder', albumInfo);
@@ -157,7 +158,10 @@ jetta.download = function(link, dir, event) {
             var progress = parseInt(parseFloat(stats["size"] / track_info.size) * 100);
             console.log(track_info.track + ': ' + progress + '%');
 
-            sender.send('progress', { "id": track_info.id, "progress": track_info.track + ': ' + progress + '%' });
+            sender.send('progress', {
+                "id": track_info.id,
+                "progress": track_info.track + ': ' + progress + '%'
+            });
             //send to the browser (id for list element)
             if (progress != 100) {
                 setTimeout(function() {

@@ -30,7 +30,6 @@ const settings = ((() => {
 
     };
 
-    //settings.save();
     self.save = () => {
         localStorage.settings = JSON.stringify(self.settings);
     };
