@@ -16,6 +16,10 @@ To run the development environment run
 ```
 npm install && npm run dev
 ```
+## Contributors
+| [@dzt](https://github.com/dzt) | [@rubyist](https://github.com/soops) |
+|---|---|
+| [![](https://avatars1.githubusercontent.com/u/6421443?v=3&s=100)](https://github.com/dzt) | [![](https://avatars1.githubusercontent.com/u/8540373?v=3&s=100)](https://github.com/soops) |
 
 ## Important Notice
 Buy the tracks/albums you like, I do not support nor do I condone using Jetta to download priced albums. This project is designed for educational purposes.
