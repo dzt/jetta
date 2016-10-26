@@ -4,6 +4,7 @@ const ipcMain = electron.ipcMain
 const dialog = require('electron').dialog
 const BrowserWindow = electron.BrowserWindow
 const autoUpdater = require('./auto-updater')
+const {Menu} = require('electron')
 //const debug = require('debug')
 var mainWindow
 
@@ -44,8 +45,120 @@ function init() {
     }
   }
 
+  function initMenu() {
+    // Create menu template. This should shows up on Windows as the window's menu (untested) and it shows up as the app menu on OS X.
+    const menuTemplate = [
+      {
+        label: 'Edit',
+        submenu: [
+          {
+            role: 'undo'
+          },
+          {
+            role: 'redo'
+          },
+          {
+            type: 'separator'
+          },
+          {
+            role: 'cut'
+          },
+          {
+            role: 'copy'
+          },
+          {
+            role: 'paste'
+          },
+          {
+            role: 'pasteandmatchstyle'
+          },
+          {
+            role: 'delete'
+          },
+          {
+            role: 'selectall'
+          }
+        ]
+      },
+      {
+        label: 'View',
+        submenu: [
+          {
+            label: 'Reload',
+            accelerator: 'CmdOrCtrl+R',
+            click (item, focusedWindow) {
+              if (focusedWindow) focusedWindow.reload()
+            }
+          },
+          {
+            label: 'Toggle Developer Tools',
+            accelerator: process.platform === 'darwin' ? 'Alt+Command+I' : 'Ctrl+Shift+I',
+            click (item, focusedWindow) {
+              if (focusedWindow) focusedWindow.webContents.toggleDevTools()
+            }
+          },
+          {
+            type: 'separator'
+          }
+        ]
+      },
+      {
+        role: 'window',
+        submenu: [
+          {
+            role: 'minimize'
+          },
+          {
+            role: 'close'
+          }
+        ]
+      },
+      {
+        role: 'help',
+        submenu: [
+          {
+            label: 'Learn More',
+            click () { require('electron').shell.openExternal('https://github.com/dzt/jetta') }
+          }
+        ]
+      }
+    ]
+
+    // If the platform is Mac OS, make some changes to the window management portion of the menu
+    if (process.platform === 'darwin') {
+      menuTemplate[2].submenu = [
+        {
+          label: 'Close',
+          accelerator: 'CmdOrCtrl+W',
+          role: 'close'
+        },
+        {
+          label: 'Minimize',
+          accelerator: 'CmdOrCtrl+M',
+          role: 'minimize'
+        },
+        {
+          label: 'Zoom',
+          role: 'zoom'
+        },
+        {
+          type: 'separator'
+        },
+        {
+          label: 'Bring All to Front',
+          role: 'front'
+        }
+      ]
+    }
+
+    // Set menu template just created as the application menu
+    const mainMenu = Menu.buildFromTemplate(menuTemplate)
+    Menu.setApplicationMenu(mainMenu)
+  }
+
   app.on('ready', () => {
     createWindow()
+    initMenu()
     var wintwo = mainWindow;
     autoUpdater.initialize(wintwo)
   })

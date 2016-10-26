@@ -1,6 +1,6 @@
 {
   "name": "jetta",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Multi-platform Bandcamp/Souldcloud Downloader built with Electron.",
   "main": "main.js",
   "scripts": {
@@ -56,7 +56,7 @@
     "win": {
       "title": "Jetta",
       "icon": "assets/logo.ico",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "target": "squirrel",
       "authors": "Peter Soboyejo"
     }

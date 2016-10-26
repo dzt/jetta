@@ -6,6 +6,7 @@ const path = require('path');
 const CurrentWindow = remote.getCurrentWindow()
 const shell = require("electron").shell
 const $ = require('jquery');
+const clipboard = require("electron").clipboard
 var dir
 const base = 'http://www.supremenewyork.com';
 
@@ -82,8 +83,9 @@ $('#downloadBtn').click(() => {
     $('#downloadBtn').val('Initializing...')
 });
 
+// Paste text from clipboard.
 $('#paste').click(() => {
-    var link = $('#link').val('http://blankbanshee.bandcamp.com/album/mega')
+    var link = $('#link').val(clipboard.readText())
     console.log(link)
 });
 
